@@ -1,0 +1,381 @@
+/* oemcentercaps.com — v1 static styles. No framework, no JS required. */
+:root{
+  --bg:#12151a;
+  --panel:#1b1f26;
+  --panel-2:#22272f;
+  --steel:#9aa7b4;
+  --steel-light:#d5dde5;
+  --text:#e8edf2;
+  --muted:#8b96a3;
+  --red:#d22630;
+  --red-dark:#a3121b;
+  --line:#2c333e;
+  --amber:#e8a33d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  font-size:17px;
+}
+a{color:#7db8e8;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1020px;margin:0 auto;padding:0 18px}
+
+/* Header / nav */
+header{
+  background:linear-gradient(180deg,#1a1e25,#14171c);
+  border-bottom:3px solid var(--red);
+}
+.brand{padding:20px 0 6px}
+.brand .logo{
+  font-size:1.55rem;font-weight:800;letter-spacing:.02em;color:var(--text);
+  text-transform:uppercase;
+}
+.brand .logo span{color:var(--red)}
+.brand .tag{color:var(--steel);font-size:.92rem;margin-top:2px}
+nav{padding:10px 0 16px}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+nav a{
+  display:block;padding:8px 13px;border-radius:6px;color:var(--steel-light);
+  background:var(--panel);border:1px solid var(--line);font-size:.95rem;font-weight:600;
+}
+nav a:hover{background:var(--panel-2);text-decoration:none}
+nav a.current{background:var(--red);border-color:var(--red-dark);color:#fff}
+
+/* Hero */
+.hero{
+  padding:38px 0 10px;
+}
+.hero h1{font-size:2rem;line-height:1.2;font-weight:800}
+.hero h1 .accent{color:var(--red)}
+.hero p.lede{color:var(--steel-light);font-size:1.08rem;margin-top:12px;max-width:46em}
+.promise{
+  margin:22px 0;padding:16px 18px;background:var(--panel);
+  border-left:5px solid var(--red);border-radius:6px;
+}
+.promise strong{color:#fff}
+
+/* Sections & cards */
+section{padding:22px 0}
+h2{font-size:1.45rem;font-weight:800;margin-bottom:10px;border-bottom:2px solid var(--line);padding-bottom:6px}
+h3{font-size:1.12rem;font-weight:700;margin:16px 0 6px;color:var(--steel-light)}
+p{margin:10px 0}
+ul,ol{margin:10px 0 10px 22px}
+li{margin:5px 0}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+@media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.cards.three{grid-template-columns:1fr 1fr 1fr}}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;
+}
+.card h3{margin-top:0}
+.card p{color:var(--steel-light);font-size:.97rem}
+.btn{
+  display:inline-block;margin-top:10px;padding:10px 16px;border-radius:6px;
+  background:var(--red);color:#fff;font-weight:700;font-size:.95rem;
+}
+.btn:hover{background:var(--red-dark);text-decoration:none}
+.btn.ghost{background:var(--panel-2);border:1px solid var(--line);color:var(--steel-light)}
+
+/* Tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:560px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel-2);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#171b21}
+td.num,th.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* Callouts */
+.note{
+  background:#232a20;border:1px solid #3d5231;border-radius:6px;
+  padding:14px 16px;margin:16px 0;font-size:.97rem;
+}
+.warn{
+  background:#2e2417;border:1px solid #6b5225;border-radius:6px;
+  padding:14px 16px;margin:16px 0;font-size:.97rem;
+}
+.note strong,.warn strong{color:#fff}
+.slot{
+  border:2px dashed var(--amber);border-radius:8px;padding:16px 18px;margin:14px 0;
+  background:#241f16;
+}
+.slot .slot-label{
+  display:inline-block;background:var(--amber);color:#191104;font-weight:800;
+  font-size:.78rem;letter-spacing:.06em;padding:3px 9px;border-radius:4px;text-transform:uppercase;
+}
+.slot p{margin-top:8px;color:var(--steel-light)}
+.slot .fake-link{color:var(--amber);font-weight:700}
+.fake-link{color:var(--amber);font-weight:700}
+
+/* Steps */
+ol.steps{list-style:none;margin-left:0;counter-reset:step}
+ol.steps li{
+  counter-increment:step;position:relative;padding:14px 16px 14px 58px;margin:10px 0;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+}
+ol.steps li::before{
+  content:counter(step);position:absolute;left:14px;top:12px;
+  width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+figure.diagram{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:16px;margin:16px 0;text-align:center;
+}
+figure.diagram figcaption{color:var(--muted);font-size:.92rem;margin-top:8px}
+
+/* Footer */
+footer{
+  border-top:3px solid var(--red);margin-top:26px;padding:22px 0 34px;
+  background:#0f1216;color:var(--muted);font-size:.92rem;
+}
+footer a{color:var(--steel-light)}
+footer .cols{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){footer .cols{grid-template-columns:1fr 1fr 1fr}}
+.small{font-size:.88rem;color:var(--muted)}
+.kicker{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+.postmeta{color:var(--muted);font-size:.9rem;margin:4px 0 14px}
+.postlist{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+@media(min-width:760px){.postlist{grid-template-columns:1fr 1fr}}
+.postlist .card h3 a{color:#fff;text-decoration:none}
+.postlist .card h3 a:hover{color:var(--red);text-decoration:underline}
+article.post h2{margin-top:26px}
+article.post .src{font-size:.86rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px}
+
+.brandlogo{float:left;width:48px;height:48px;border-radius:50%;object-fit:cover;margin:1px 12px 0 0}
+
+.brandlockup{display:block;margin:24px auto 4px;max-width:420px;width:100%;height:auto;border-radius:12px}
+
+/* ===== Rework 2026-10-23: images, shop tiles, lightbox, social, reviews ===== */
+
+/* Shop-live-on-eBay tiles */
+.shoptiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+@media(min-width:640px){.shoptiles{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:920px){.shoptiles{grid-template-columns:repeat(4,1fr)}}
+.shoptile{
+  display:block;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  overflow:hidden;color:var(--text);
+}
+.shoptile:hover{border-color:var(--red);text-decoration:none}
+.shoptile img{width:100%;height:150px;object-fit:cover;display:block;background:#0d0f12}
+.shoptile .tlabel{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;font-weight:700;font-size:.95rem}
+.shoptile .tlabel .go{color:var(--amber);font-size:.82rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+
+/* Blog index image-led cards */
+.cardthumb{margin:-18px -18px 12px;border-radius:8px 8px 0 0;overflow:hidden}
+.cardthumb img{width:100%;height:170px;object-fit:cover;display:block;background:#0d0f12}
+.cardthumb--brand{
+  height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(180deg,#232830,#171b21);color:var(--steel);font-size:.82rem;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+}
+.cardthumb--brand img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.catnav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.catnav a{
+  padding:7px 13px;border-radius:999px;background:var(--panel);border:1px solid var(--line);
+  color:var(--steel-light);font-weight:700;font-size:.9rem;
+}
+.catnav a:hover{border-color:var(--red);text-decoration:none}
+
+/* Post hero + inline figures */
+figure.posthero{margin:16px 0 6px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+figure.posthero img{width:100%;max-height:430px;object-fit:cover;display:block;cursor:zoom-in}
+figure.posthero figcaption{padding:10px 14px;color:var(--muted);font-size:.88rem}
+figure.posthero figcaption a{color:#7db8e8}
+.byline{color:var(--muted);font-size:.9rem;margin:2px 0 10px}
+.byline strong{color:var(--steel-light)}
+.endmod{
+  margin:26px 0 6px;padding:16px 18px;background:var(--panel);
+  border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:6px;
+}
+.endmod h3{margin-top:0}
+.endmod .btn{margin-right:8px}
+
+/* Brand page figures */
+figure.brandfig{margin:6px 0 14px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);max-width:460px}
+figure.brandfig img{width:100%;height:230px;object-fit:cover;display:block;cursor:zoom-in}
+figure.brandfig figcaption{padding:9px 12px;color:var(--muted);font-size:.86rem}
+
+/* Cap Finder photo strip */
+.photostrip{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0}
+@media(min-width:760px){.photostrip{grid-template-columns:1fr 1fr 1fr}}
+.photostrip figure{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.photostrip img{width:100%;height:180px;object-fit:cover;display:block;cursor:zoom-in}
+.photostrip figcaption{padding:9px 12px;color:var(--muted);font-size:.86rem}
+
+/* Zoomable images + lightbox */
+img.zoomable{cursor:zoom-in}
+.lightbox{
+  position:fixed;inset:0;background:rgba(5,6,8,.92);display:none;
+  align-items:center;justify-content:center;z-index:1000;padding:18px;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:96vw;max-height:88vh;border-radius:8px;box-shadow:0 10px 50px rgba(0,0,0,.6)}
+.lightbox .lb-close{
+  position:absolute;top:14px;right:18px;background:var(--red);color:#fff;border:0;
+  width:44px;height:44px;border-radius:50%;font-size:1.3rem;font-weight:800;cursor:pointer;line-height:1;
+}
+.lightbox .lb-cap{
+  position:absolute;left:0;right:0;bottom:14px;text-align:center;color:var(--steel-light);
+  font-size:.92rem;padding:0 20px;
+}
+
+/* Instagram — visibly larger, site system */
+.iglink{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--steel-light)}
+.iglink svg{width:30px;height:30px;flex:none}
+.iglink:hover{color:#fff;text-decoration:none}
+header .iglink{float:right;margin-top:6px}
+header .iglink svg{width:34px;height:34px}
+footer .iglink svg{width:32px;height:32px}
+
+/* WhatsApp floating contact */
+.wafloat{
+  position:fixed;right:16px;bottom:16px;z-index:900;display:flex;align-items:center;gap:9px;
+  background:#25d366;color:#0b3d20;font-weight:800;font-size:.95rem;
+  padding:11px 16px 11px 12px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.45);
+}
+.wafloat:hover{text-decoration:none;background:#1fbe59}
+.wafloat svg{width:26px;height:26px;flex:none}
+@media(max-width:520px){.wafloat .watext{display:none}.wafloat{padding:12px}}
+
+/* Reviews / credibility block */
+.reviewgrid{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0}
+@media(min-width:760px){.reviewgrid{grid-template-columns:1fr 1fr 1fr}}
+.reviewcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}
+.reviewcard h3{margin-top:0;color:#fff}
+.reviewcard p{color:var(--steel-light);font-size:.97rem}
+
+/* Ad slot structure (inert until AdSense enrollment) */
+/* ===== Items 14-20: retail polish, topbar, sponsor, services, concierge ===== */
+.topbar{
+  background:#0b0d10;color:var(--steel);font-size:.85rem;padding:7px 0;
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.topbar a{color:var(--amber);font-weight:700}
+.topbar .tb-right{margin-left:auto}
+.hero{
+  background-image:url("assets/img/texture-medallion.png");
+  background-repeat:no-repeat;background-position:right -60px top -40px;background-size:340px;
+}
+.bloghero{
+  background-image:url("assets/img/texture-medallion.png");
+  background-repeat:no-repeat;background-position:right -60px top -40px;background-size:340px;
+}
+.cards.four{grid-template-columns:1fr}
+@media(min-width:920px){.cards.four{grid-template-columns:1fr 1fr 1fr 1fr}}
+.sponsorslot{
+  display:block;border:2px dashed var(--steel);border-radius:8px;padding:18px;margin:16px 0;
+  background:var(--panel);color:var(--steel-light);text-align:center;
+}
+.sponsorslot:hover{border-color:var(--amber);text-decoration:none;color:#fff}
+.sponsorslot .ss-label{
+  display:inline-block;background:var(--steel);color:#10131a;font-weight:800;font-size:.78rem;
+  letter-spacing:.06em;padding:3px 9px;border-radius:4px;text-transform:uppercase;margin-bottom:8px;
+}
+.sponsorslot strong{color:#fff;font-size:1.05rem}
+.networkstrip{
+  border-top:1px solid var(--line);margin-top:18px;padding-top:12px;
+  font-size:.85rem;color:var(--muted);
+}
+.networkstrip a{color:var(--steel-light);font-weight:700}
+form.concierge{margin:16px 0}
+form.concierge .field{margin:12px 0}
+form.concierge label{display:block;font-weight:700;color:var(--steel-light);margin-bottom:5px;font-size:.95rem}
+form.concierge input,form.concierge select,form.concierge textarea{
+  width:100%;padding:11px 12px;border-radius:6px;border:1px solid var(--line);
+  background:var(--panel);color:var(--text);font-size:1rem;font-family:inherit;
+}
+form.concierge textarea{min-height:110px}
+form.concierge .hint{font-size:.85rem;color:var(--muted);margin-top:4px}
+
+/* House ads (item 21) — network cross-promotion units. The creative inside
+   carries the promoted site's own branding; the unit is labelled and boxed
+   so it never blends into oemcentercaps.com content. */
+.housead{
+  background:#0a0a0a;border:2px solid #c9a227;border-radius:8px;
+  padding:20px 18px;margin:16px 0;text-align:center;
+}
+.ha-label{font-size:.72rem;letter-spacing:.22em;color:#c9a227;font-weight:800;text-transform:uppercase}
+.ha-brand{font-size:1.6rem;font-weight:900;color:#fff;letter-spacing:.01em;margin:6px 0 2px;text-transform:uppercase}
+.ha-brand .x{color:#e01b1b}
+.ha-head{color:#c9a227;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.95rem}
+.ha-body{color:#cfc8b4;font-size:.95rem;max-width:34em;margin:8px auto 4px}
+.ha-btn{display:inline-block;margin-top:8px;background:#d22630;color:#fff;font-weight:800;padding:10px 18px;border-radius:6px}
+.ha-btn:hover{background:#a3121b;text-decoration:none;color:#fff}
+
+/* Video embeds (tutorials page + blog video modules) */
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem;margin:1rem 0 1.6rem}
+.vidcard{background:rgba(255,255,255,.03);border:1px solid rgba(232,163,61,.35);border-radius:10px;padding:.8rem}
+.vidcard h3{font-size:1.02rem;margin:.6rem 0 .3rem}
+.vidcard p{font-size:.92rem;margin:.2rem 0}
+.vidwrap{position:relative;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden}
+.vidwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidcredit{font-size:.85rem;opacity:.85}
+.blogvid{margin:1.4rem 0}
+.blogvid .vidwrap{max-width:720px}
+
+/* Logo watermark — runs down the background of every page */
+body{
+  background-image:url("assets/img/watermark-medallion.png");
+  background-repeat:repeat-y;
+  background-position:center 140px;
+  background-size:540px auto;
+}
+
+/* Light / dark theme (toggle in the top bar; dark is the default brand look) */
+html[data-theme="light"]{
+  --bg:#f4f6f8; --panel:#ffffff; --panel-2:#e9edf1;
+  --steel:#55616d; --steel-light:#333d46;
+  --text:#161b21; --muted:#5d6873; --line:#d3dbe2;
+}
+html[data-theme="light"] body{background-color:var(--bg)}
+html[data-theme="light"] a{color:#0b5cad}
+html[data-theme="light"] header{background:linear-gradient(180deg,#ffffff,#edf0f3)}
+html[data-theme="light"] th{color:#161b21}
+html[data-theme="light"] tr:nth-child(even) td{background:#eef1f4}
+html[data-theme="light"] .note{background:#eef6e8;border-color:#9db98a}
+html[data-theme="light"] .warn{background:#fdf3e0;border-color:#cfa14f}
+html[data-theme="light"] .note strong,html[data-theme="light"] .warn strong{color:#161b21}
+html[data-theme="light"] .promise strong{color:#161b21}
+html[data-theme="light"] .postlist .card h3 a{color:#161b21}
+html[data-theme="light"] .cardthumb--brand{background:linear-gradient(180deg,#ffffff,#e9edf1)}
+html[data-theme="light"] .topbar{background:#e9edf1;color:#55616d}
+html[data-theme="light"] footer{background:#edf0f3}
+html[data-theme="light"] .vidcard{background:rgba(0,0,0,.03)}
+html[data-theme="light"] .reviewcard h3,html[data-theme="light"] .sponsorslot strong{color:#161b21}
+html[data-theme="light"] figure.posthero figcaption a{color:#0b5cad}
+.themebtn{
+  margin-left:14px;padding:5px 12px;border-radius:999px;cursor:pointer;
+  background:var(--panel-2);color:var(--steel-light);border:1px solid var(--line);
+  font-size:.85rem;font-weight:700;vertical-align:middle;
+}
+.themebtn:hover{border-color:var(--amber)}
+
+/* Batch additions: pagination, ad slots, share/house cards, tags, video note */
+.pagenav{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0}
+.pagenav button{background:#141414;color:#e8a33d;border:2px solid #e8a33d;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:1rem}
+.pagenav button.on{background:#800020;color:#fff}
+.pagenav button:disabled{opacity:.4;cursor:default}
+.pagenav .pagenote{color:#888;font-size:.9rem;margin-left:8px}
+.tags{font-size:.95rem;color:#888;margin-top:20px}
+.sharecard{border:2px solid #e8a33d;border-radius:10px;padding:14px;margin:24px 0;background:#141414}
+.sharecard-label,.housecard-label{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:#e8a33d;margin:0 0 10px}
+.sharecard-link{display:flex;gap:12px;align-items:center;text-decoration:none;color:#fff}
+.sharecard-link img{width:72px;height:72px;object-fit:cover;border-radius:8px}
+.housecard{border:2px solid #800020;border-radius:10px;padding:14px;margin:24px 0;background:#1a0505}
+.housecard p{margin:0}
+.vidnote{border-left:4px solid #e8a33d;padding:10px 14px;margin:24px 0;background:#141414}
+.vidnote p{margin:0}
+
+.vidtiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+@media(min-width:640px){.vidtiles{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:920px){.vidtiles{grid-template-columns:repeat(5,1fr)}}
+.vidtile{border:2px solid var(--amber);border-radius:8px;overflow:hidden;background:#0d0f12}
+.vidtile .vlabel{padding:10px 12px}
+.vidtile .vlabel strong{display:block;color:#fff;font-size:.95rem}
+.vidtile .vlabel span{display:block;color:#cfcfcf;font-size:.85rem;margin-top:4px}

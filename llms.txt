@@ -1,0 +1,52 @@
+# OEM Center Caps
+
+> OEM Center Caps (oemcentercaps.com) is a free fitment-information site for
+> factory (OEM) wheel center caps. It publishes sourced center-cap sizes and
+> part numbers, tells you honestly when a size is not published, and offers a
+> free tool that matches a cap by vehicle or by measurement.
+
+- Main site: https://oemcentercaps.com/
+- Contact: jtt.imports@hotmail.com (JTT Imports)
+- Instagram: https://instagram.com/oemcentercaps
+
+## Free tools
+
+- Cap Finder: https://oemcentercaps.com/cap-finder.html
+  Find a cap two ways: by vehicle (from published specs and part numbers), or
+  by measure-and-match (enter your measurements; matches within plus or minus
+  1.5 mm). Step 1 (measure check) must be confirmed before Step 2 unlocks.
+  The Cap Finder is also installable as a web app (PWA).
+- How to measure: https://oemcentercaps.com/how-to-measure.html
+- Fitment guide: https://oemcentercaps.com/fitment-guide.html
+- Cap Concierge: https://oemcentercaps.com/cap-concierge.html
+
+## Honest fitment policy
+
+- Specs are sourced only. Where no OEM size is published, the brand is listed
+  as measure-first: Buick, Chrysler, modern Lincoln, Infiniti, Genesis, Fiat.
+- Published conflicts are shown openly, not hidden: Tesla and Mazda have
+  conflicting published data. The Ram 1500 77.8 mm bore figure is deliberately
+  withheld because it is not verified.
+- Example: Acura RDX 2010-2017 uses 69 mm outside diameter / 64 mm clip
+  diameter, Honda/Acura 44732 family. No RDX-specific OEM part number is
+  published, so it is flagged measure-first.
+
+## Where to buy
+
+- Where to buy: https://oemcentercaps.com/where-to-buy.html
+  Amazon.ca links there carry the Associate tag uxk-20, with an Associate
+  disclosure on the page. eBay links are plain searches (no affiliate
+  commission) until an eBay partner campaign is confirmed.
+
+## Content
+
+- Blog index: https://oemcentercaps.com/blog.html (59 posts: fitment guides,
+  measuring help, materials, buying used caps, and Q&A)
+- Q&A: https://oemcentercaps.com/blog/qa-what-size-center-cap-do-i-need.html
+  https://oemcentercaps.com/blog/qa-how-do-i-measure-my-center-cap.html
+  https://oemcentercaps.com/blog/qa-will-a-replica-cap-fit-my-wheels.html
+  https://oemcentercaps.com/blog/qa-what-do-the-numbers-on-the-back-of-a-cap-mean.html
+- Tutorials: https://oemcentercaps.com/tutorials.html
+- Brands: https://oemcentercaps.com/brands.html
+- Privacy policy: https://oemcentercaps.com/privacy-policy.html
+- Sitemap: https://oemcentercaps.com/sitemap.xml

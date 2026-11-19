@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-adsense-account" content="ca-pub-5726111751212432">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLQYG0E4F9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLQYG0E4F9');
+</script>
+<title>Center Cap Size Finder — What Center Cap Fits My Car? | OEM Center Caps</title>
+<meta name="description" content="Free center cap size finder — what center cap fits my car? Pick your vehicle for sourced OEM sizes and part numbers, or learn how to measure a center cap and match it. Confirm fit before you buy.">
+<link rel="canonical" href="https://oemcentercaps.com/cap-finder.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OEM Center Caps — oemcentercaps.com">
+<meta property="og:title" content="Center Cap Size Finder — What Center Cap Fits My Car? | OEM Center Caps">
+<meta property="og:description" content="Free center cap size finder — what center cap fits my car? Pick your vehicle for sourced OEM sizes and part numbers, or learn how to measure a center cap and match it. Confirm fit before you buy.">
+<meta property="og:url" content="https://oemcentercaps.com/cap-finder.html">
+<meta property="og:image" content="https://oemcentercaps.com/assets/logo-oem-square.png">
+<meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OEMCenterCaps">
+<meta name="twitter:title" content="Center Cap Size Finder — What Center Cap Fits My Car? | OEM Center Caps">
+<meta name="twitter:description" content="Free center cap size finder — what center cap fits my car? Pick your vehicle for sourced OEM sizes and part numbers, or learn how to measure a center cap and match it. Confirm fit before you buy.">
+<meta name="twitter:image" content="https://oemcentercaps.com/assets/logo-oem-square.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png?v=4">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#14171c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cap Finder">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+  .tool{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;margin:18px 0}
+  .tool h3{margin-top:0}
+  .tool label{display:block;font-weight:600;margin:14px 0 6px}
+  .tool select,.tool input{width:100%;max-width:520px;padding:11px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2,#1a1e25);color:#fff;font-size:1rem}
+  .tool .row{display:flex;gap:14px;flex-wrap:wrap}
+  .tool .row>div{flex:1 1 220px;max-width:340px}
+  .unitbar{display:flex;gap:8px;margin-top:6px}
+  .unitbar button{padding:7px 14px;border-radius:6px;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font-weight:600}
+  .unitbar button.on{background:var(--red);border-color:var(--red-dark)}
+  .result{display:none;margin-top:18px;border:1px solid var(--line);border-left:4px solid #e8a33d;border-radius:6px;padding:16px 18px;background:rgba(232,163,61,.06)}
+  .result.show{display:block}
+  .result .big{font-size:1.5rem;font-weight:700;color:#e8a33d}
+  .result table{width:100%;border-collapse:collapse;margin-top:10px}
+  .result td,.result th{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  .conflict{border-left-color:#d22630;background:rgba(210,38,48,.07)}
+  .shopbtn{display:inline-block;margin-top:12px;margin-right:10px}
+  .verify{display:block;margin-top:14px;padding:11px 13px;border:1px dashed #e8a33d;border-radius:6px;font-weight:600;cursor:pointer}
+  .verify input{width:auto;margin-right:9px;transform:scale(1.25);vertical-align:middle}
+  .gated{opacity:.4;pointer-events:none}
+  .gated.on{opacity:1;pointer-events:auto}
+  .fineprint{font-size:.85rem;color:#9aa7b4;margin-top:10px}
+  .herovis{display:flex;gap:18px;flex-wrap:wrap;align-items:stretch;margin:18px 0}
+  .herovis .diagrambox{flex:1 1 420px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .herovis .diagrambox svg{width:100%;height:auto;display:block}
+  .herovis .photobox{flex:1 1 260px;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+  .herovis .photobox img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block}
+  .herovis figcaption{padding:10px 14px;font-size:.88rem;color:var(--steel)}
+  .summarycard{background:var(--panel-2,#22272f);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:6px;padding:16px 18px;margin:16px 0}
+  .summarycard table{width:100%;border-collapse:collapse}
+  .summarycard td,.summarycard th{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+  .summarycard th{width:38%;color:var(--steel);font-weight:600}
+  .summarycard .empty{color:var(--muted);font-style:italic}
+  .fitstable{width:100%;border-collapse:collapse;margin:14px 0}
+  .fitstable th,.fitstable td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  .fitstable th{color:var(--amber)}
+  .winternote{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;margin:14px 0}
+  .winternote img{width:260px;max-width:100%;border-radius:6px}
+  .winternote .wtext{flex:1 1 300px}
+  .tool textarea{width:100%;max-width:520px;padding:11px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2,#1a1e25);color:#fff;font-size:1rem;font-family:inherit}
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5726111751212432" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"OEM Center Caps — Cap Finder","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","url":"https://oemcentercaps.com/cap-finder.html","description":"Free center cap finder and measure-and-match calculator: find your center cap size by vehicle or by caliper measurement, using sourced OEM sizes and part numbers, then send your fitment to OEM Center Caps for confirmation before you buy.","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"featureList":["Find by vehicle","Measure and match calculator","Sourced OEM sizes and part numbers","Send fitment to OEM for confirmation","Common fits quick lookup"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Center caps are sized to the wheel, not the car — the same model can wear different wheels with different caps. Pick your vehicle in Step 1 of the Cap Finder for the commonly listed OEM size and part numbers, then measure your own cap or wheel to confirm before you buy."},"name":"What center cap fits my car?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Use a caliper and record in millimetres. Measure the outer diameter across the face of the cap, then flip it over and measure the clip diameter across the tips of the two farthest opposing clips. The clip diameter is the number that has to match your wheel opening — it is what holds the cap on."},"name":"How do I measure a center cap?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"The 2014–2024 Silverado 1500 (and GMC Sierra 1500, Tahoe and Yukon) commonly takes an 83 mm (3.25 in) cap, OEM part numbers 22837060 and 20942002. Other years and wheels differ, so confirm by measuring your cap or wheel."},"name":"What size is a Chevy Silverado center cap?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No — diameter is only part of it. The clip style, clip count and clip depth all have to match too, or the cap will not lock in and will pop off. Match the clip diameter and the part number molded on the back of your old cap first."},"name":"Can I use any center cap that fits the hole?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Measure the wheel opening directly with a caliper — that diameter is what the replacement cap's clip diameter must match. Or pop a surviving cap off another wheel and measure it instead; it is more reliable than the bare wheel."},"name":"My center cap is lost — how do I find the size?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Typical ranges: most single caps run about $50 each, and rare full sets can reach $1,000. The exact price depends on the cap. OEM Center Caps confirms the fit and quotes one total before you pay anything."},"name":"How much should a center cap cost?"}]}
+</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Canadian-run &middot; Fitment measured, not guessed</span><button id="themeToggle" class="themebtn" type="button">&#9728;&#65039; Light</button><span class="tb-right"><a href="cap-concierge.html">Cap Concierge — we find your cap</a> &middot; <a href="mailto:jtt.imports@hotmail.com">jtt.imports@hotmail.com</a></span></div></div>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img class="brandlogo" src="assets/logo-oem.png" alt="OEM Center Caps logo" width="48" height="48">
+      <div class="logo">OEM<span>CenterCaps</span>.com</div>
+      <div class="tag">Factory wheel center cap fitment — measured, not guessed.</div>
+      <a class="iglink" href="https://www.instagram.com/oemcentercaps/" aria-label="OEM Center Caps on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8a33d" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cap-finder.html" class="current">Cap Finder</a></li>
+        <li><a href="cap-concierge.html">Cap Concierge</a></li>
+        <li><a href="fitment-guide.html">Fitment Guide</a></li>
+        <li><a href="how-to-measure.html">How to Measure</a></li>
+        <li><a href="brands.html">By Brand</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="where-to-buy.html">Where to Buy</a></li>
+        <li><a href="about.html">About / Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="kicker">FREE TOOL — CENTER CAP FINDER &amp; CALCULATOR</div>
+    <h1>The <span class="accent">Cap Finder</span></h1>
+    <p class="lede">Two ways to your size, one way to be sure. Know your vehicle? Pick it and get the sourced OEM cap size and part numbers. Already holding a caliper? Enter your measurements and match them against real fitments. Then send what you found to us in Step 3 — we confirm the fit before you buy. Either way, finish with the 60-second measure check — the wheel, not the badge, decides the cap.</p>
+    <p class="small">The Cap Finder app by <strong style="color:#e8a33d">OEMCenterCaps.com</strong> — JTT Imports, Canada. Install it: <button type="button" class="btn" id="installBtn" style="display:none">Install the app</button> <span id="iosHint" style="display:none">on iPhone, tap Share → “Add to Home Screen.”</span></p>
+  </div>
+
+  <figure class="herovis">
+    <div class="diagrambox">
+      <svg viewBox="0 0 640 320" role="img" aria-label="Diagram of a center cap: face view showing the outer diameter arrow across the face, and back view showing the clip diameter arrow across the clip tips, with the part number location and snap-in clips labelled">
+        <text x="160" y="26" fill="#e8edf2" font-size="15" font-weight="700" text-anchor="middle">FACE — what you see on the wheel</text>
+        <circle cx="160" cy="160" r="98" fill="#2a313b" stroke="#9aa7b4" stroke-width="2.5"/>
+        <circle cx="160" cy="160" r="58" fill="none" stroke="#39424e" stroke-width="2"/>
+        <circle cx="160" cy="160" r="30" fill="#1b1f26" stroke="#e8a33d" stroke-width="2"/>
+        <text x="160" y="165" fill="#e8a33d" font-size="13" font-weight="700" text-anchor="middle">LOGO</text>
+        <line x1="62" y1="160" x2="258" y2="160" stroke="#d22630" stroke-width="2.5"/>
+        <path d="M62 160 l12 -5 v10 Z" fill="#d22630"/><path d="M258 160 l-12 -5 v10 Z" fill="#d22630"/>
+        <text x="160" y="292" fill="#e8edf2" font-size="13" text-anchor="middle">OUTER DIAMETER — across the face (red)</text>
+        <text x="480" y="26" fill="#e8edf2" font-size="15" font-weight="700" text-anchor="middle">BACK — what holds it on</text>
+        <circle cx="480" cy="160" r="98" fill="#22272f" stroke="#9aa7b4" stroke-width="2.5"/>
+        <circle cx="480" cy="160" r="60" fill="none" stroke="#39424e" stroke-width="2"/>
+        <g fill="#39424e" stroke="#9aa7b4" stroke-width="1.5">
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(540,160) rotate(0)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(522,202) rotate(45)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(480,220) rotate(90)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(438,202) rotate(135)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(420,160) rotate(180)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(438,118) rotate(225)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(480,100) rotate(270)"/>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" transform="translate(522,118) rotate(315)"/>
+        </g>
+        <line x1="420" y1="160" x2="540" y2="160" stroke="#e8a33d" stroke-width="2.5"/>
+        <path d="M420 160 l12 -5 v10 Z" fill="#e8a33d"/><path d="M540 160 l-12 -5 v10 Z" fill="#e8a33d"/>
+        <line x1="522" y1="118" x2="560" y2="84" stroke="#7db8e8" stroke-width="1.5"/>
+        <text x="566" y="80" fill="#7db8e8" font-size="12">Snap-in clips — count them</text>
+        <line x1="480" y1="130" x2="480" y2="96" stroke="#7db8e8" stroke-width="1.5"/>
+        <text x="480" y="88" fill="#7db8e8" font-size="12" text-anchor="middle">Part number molded here</text>
+        <text x="480" y="292" fill="#e8edf2" font-size="13" text-anchor="middle">CLIP DIAMETER — across the clip tips (amber)</text>
+      </svg>
+      <figcaption>Two numbers decide your cap: the outer diameter across the face, and the clip diameter across the clip tips on the back. The clip diameter is the one that has to match your wheel.</figcaption>
+    </div>
+    <div class="photobox">
+      <img src="assets/img/cap-back.jpg" alt="The back of an OEM center cap showing the clips and molded part-number markings">
+      <figcaption><strong>Read the back first.</strong> The part number and clip layout are molded into every OEM cap — flip yours over before you measure. <a href="how-to-measure.html">How to measure &rarr;</a></figcaption>
+    </div>
+  </figure>
+
+  <section>
+    <h2>1 — Find by vehicle</h2>
+    <div class="tool">
+      <label for="brandSel">Brand</label>
+      <select id="brandSel"><option value="">Choose a brand…</option></select>
+      <label for="appSel">Model / years / wheel</label>
+      <select id="appSel" disabled><option value="">Choose a brand first</option></select>
+      <div id="vehResult" class="result" role="status"></div>
+      <p class="fineprint">Sizes shown are the commonly listed OEM fitments from the sources cited in our research notes — a starting point that the measure check confirms. Brands marked “measure first” have no sourced cap spec we are willing to print, so we teach the measurement instead of inventing a number.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 — Measure &amp; match calculator</h2>
+    <div class="tool">
+      <div class="row">
+        <div>
+          <label for="odIn">Cap outer diameter (across the face)</label>
+          <input id="odIn" type="number" step="0.1" min="20" max="250" placeholder="e.g. 62">
+        </div>
+        <div>
+          <label for="idIn">Clip diameter (across the clip tips, back of cap) — optional</label>
+          <input id="idIn" type="number" step="0.1" min="10" max="250" placeholder="e.g. 55">
+        </div>
+      </div>
+      <label>Units</label>
+      <div class="unitbar">
+        <button type="button" id="uMm" class="on">Millimetres</button>
+        <button type="button" id="uIn">Inches</button>
+      </div>
+      <label for="retSel">Retention style</label>
+      <select id="retSel">
+        <option value="">Not sure / other</option>
+        <option value="snap">Snap-in plastic clips</option>
+        <option value="ring">Spring / wire ring</option>
+        <option value="screw">Screw-on</option>
+        <option value="push">Push-through with retaining ring</option>
+        <option value="lug">Lug-cover / bolt-over</option>
+      </select>
+      <p style="margin-top:16px"><button type="button" class="btn" id="calcBtn">Match my measurements</button></p>
+      <div id="calcResult" class="result" role="status"></div>
+      <p class="fineprint">New to measuring? The <a href="how-to-measure.html">How to Measure</a> page walks the caliper steps. No cap to measure because it's lost? Measure the wheel's center-bore opening directly and use that as your clip diameter.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3 — Send your fitment to OEM Center Caps</h2>
+    <div class="tool">
+      <p>Don't guess, and don't gamble on a listing. Send us what you found and we'll confirm the fit before you buy — one total quoted up front, no surprises. This card fills itself in from Steps 1 and 2 as you go.</p>
+      <div class="summarycard" id="fitSummary">
+        <table>
+          <tr><th>Vehicle</th><td id="sumVehicle" class="empty">Pick a vehicle in Step 1, or tell us in the notes below</td></tr>
+          <tr><th>Listed size / OEM part numbers</th><td id="sumListed" class="empty">—</td></tr>
+          <tr><th>Your outer diameter</th><td id="sumOd" class="empty">Measure it in Step 2</td></tr>
+          <tr><th>Your clip diameter</th><td id="sumId" class="empty">Measure it in Step 2</td></tr>
+          <tr><th>Retention style</th><td id="sumRet" class="empty">Pick one in Step 2</td></tr>
+          <tr><th>Part number on your cap</th><td id="sumPn" class="empty">—</td></tr>
+          <tr><th>Anything else</th><td id="sumNotes" class="empty">—</td></tr>
+        </table>
+      </div>
+      <label for="pnIn">Part number molded on the back of your cap (if you have it)</label>
+      <input id="pnIn" type="text" placeholder="e.g. 22837060" maxlength="60">
+      <label for="notesIn">Anything else — wheel size, how many caps you need, what happened to the old one</label>
+      <textarea id="notesIn" rows="3" placeholder="e.g. 20 in wheels, need 2 caps, one flew off on the 401" maxlength="500"></textarea>
+      <p style="margin-top:16px"><a class="btn" id="sendFitBtn" href="mailto:jtt.imports@hotmail.com?subject=Center%20cap%20fitment%20check">Send this to OEM Center Caps to confirm fit</a>
+      <button type="button" class="btn" id="copyFitBtn" style="margin-left:10px">Copy my fitment summary</button></p>
+      <p class="fineprint" id="copyNote" style="display:none">Copied — paste it into any message to us.</p>
+      <p class="fineprint">Typical ranges, not a quote: most single caps run about $50 each, and rare full sets can reach $1,000. Your exact price depends on the cap — we'll confirm the fit and quote one total before you pay anything.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Common fits — quick lookup</h2>
+    <p>The caps people ask for most. Every size below is a published OEM fitment from the sources in our research notes — if we couldn't source it, it isn't on the list.</p>
+    <div class="tablewrap">
+    <table class="fitstable">
+      <thead><tr><th>Vehicle</th><th>Cap size</th><th>OEM part numbers</th><th>Watch out for</th></tr></thead>
+      <tbody>
+        <tr><td>Chevrolet Silverado 1500 / GMC Sierra 1500 / Tahoe / Yukon (2014–2024)</td><td>83 mm OD (3.25 in)</td><td>22837060 · 20942002</td><td>Shared GM truck family</td></tr>
+        <tr><td>Honda Accord / Civic / CR-V / Odyssey (many 2000s–2010s)</td><td>69 mm OD (2.72 in)</td><td>44732-S9A-A00 family</td><td>Check the molded number on your cap's back</td></tr>
+        <tr><td>Toyota Camry (2012+) / Corolla (2014+)</td><td>62 mm OD</td><td>—</td><td>Corolla 2009–2013 is 57 mm — same name, different cap</td></tr>
+        <tr><td>Subaru — most models</td><td>60 mm OD, 55 mm clip ID</td><td>28821SA030 · 28821VA000</td><td>Some 16 in alloy wheels differ — measure</td></tr>
+        <tr><td>Jeep Grand Cherokee / Wrangler / Compass (many 2005+)</td><td>63–64 mm OD, 2.5 in ID</td><td>1LB77 series</td><td>Older Jeeps (Liberty) run 55 mm</td></tr>
+        <tr><td>Ford F-150 (2012–2014, 20 in alloy wheel)</td><td>3 in (76.2 mm)</td><td>CL3Z1130B</td><td>Wheel-specific — other F-150 wheels differ</td></tr>
+        <tr><td>Volkswagen Jetta / Passat / Golf / CC / Tiguan</td><td>65 mm OD, 2.5 in ID</td><td>3B7601171</td><td>Golf Mk7/Mk8 is 60 mm</td></tr>
+        <tr><td>Nissan trucks &amp; SUVs — Frontier / Kicks / Leaf / Pathfinder / Rogue</td><td>63 mm (2.5 in)</td><td>40342-6TA1A</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="fineprint">Sources: OEM part-number listings and fitment guides in our research notes (GM, Honda and Subaru entries re-checked against live marketplace listings November 13, 2026). Sizes are starting points — your wheel decides, so verify by measuring before ordering.</p>
+  </section>
+
+  <section>
+    <h2>Winter note — steel wheels lose caps</h2>
+    <div class="winternote">
+      <img src="assets/img/wheels-steel-open.jpg" alt="Winter steel wheels with open center bores and no center caps">
+      <div class="wtext">
+        <p><strong>Swapping to winter steel wheels?</strong> The caps from your alloys usually don't transfer — steel wheels have a different center opening, and plenty of them run with no cap at all or a push-through style. Don't order summer caps for winter wheels.</p>
+        <p><strong>Caps pop off all winter</strong> — snowbanks, ruts, car washes. Losing one in January is normal; losing the match is the problem. Measure the wheel opening (or a surviving cap) in Step 2 before you order a replacement.</p>
+        <p><strong>Keep a spare.</strong> One extra cap in the trunk beats a bare hub all winter — and it gives you a master sample to measure from if another one goes missing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Frequently asked questions</h2>
+    <h3>What center cap fits my car?</h3>
+    <p>Center caps are sized to the <em>wheel</em>, not the car — the same model can wear different wheels with different caps. Pick your vehicle in Step 1 above for the commonly listed OEM size and part numbers, then measure your own cap or wheel to confirm before you buy.</p>
+    <h3>How do I measure a center cap?</h3>
+    <p>Use a caliper and record in millimetres. Measure the outer diameter across the face of the cap, then flip it over and measure the clip diameter across the tips of the two farthest opposing clips. The clip diameter is the number that has to match your wheel opening — it is what holds the cap on. Full steps: <a href="how-to-measure.html">How to Measure</a>.</p>
+    <h3>What size is a Chevy Silverado center cap?</h3>
+    <p>The 2014–2024 Silverado 1500 (and GMC Sierra 1500, Tahoe and Yukon) commonly takes an 83&nbsp;mm (3.25&nbsp;in) cap, OEM part numbers 22837060 and 20942002. Other years and wheels differ, so confirm by measuring your cap or wheel.</p>
+    <h3>Can I use any center cap that fits the hole?</h3>
+    <p>No — diameter is only part of it. The clip style, clip count and clip depth all have to match too, or the cap will not lock in and will pop off. Match the clip diameter and the part number molded on the back of your old cap first.</p>
+    <h3>My center cap is lost — how do I find the size?</h3>
+    <p>Measure the wheel opening directly with a caliper — that diameter is what the replacement cap's clip diameter must match. Or pop a surviving cap off another wheel and measure it instead; it is more reliable than the bare wheel.</p>
+    <h3>How much should a center cap cost?</h3>
+    <p>Typical ranges: most single caps run about $50 each, and rare full sets can reach $1,000. The exact price depends on the cap. Send us your fitment in Step 3 and we'll confirm the fit and quote one total before you pay anything.</p>
+  </section>
+
+  <section>
+    <h2>Why a tool, not just a chart?</h2>
+    <p>Charts flatten the truth: the same Honda badge wears a 69&nbsp;mm cap on one wheel and something else on another; a Tesla's published sizes openly disagree with each other. The Cap Finder keeps those conflicts visible instead of hiding them, and it always lands you back on the one step that never lies — measuring your own cap or wheel. Spend the minute here, save the return shipping.</p>
+    <div class="warn"><strong>The 1&nbsp;mm rule:</strong> center cap sizing is metric and tight. A cap 1&nbsp;mm small won't lock; 1&nbsp;mm big won't seat. If your measurement lands between two listed sizes, trust the measurement and match the clip diameter first — that's the number that actually holds the cap on.</div>
+  </section>
+  <section>
+    <h2>What you're looking at</h2>
+    <div class="photostrip">
+      <figure><img src="assets/img/cap-back.jpg" alt="The back of an OEM center cap with clips and molded markings"><figcaption><strong>Read the back first.</strong> The part number and clip layout are molded into every OEM cap — <a href="how-to-measure.html">how to read them</a>.</figcaption></figure>
+      <figure><img src="assets/img/cap-jeep.jpg" alt="Jeep center cap with a 2.5-inch seller graphic"><figcaption><strong>Inches vs millimetres.</strong> Sellers mix them freely — this listing marked its own 2.5&Prime; clip diameter on the photo.</figcaption></figure>
+      <figure><img src="assets/img/wheels-steel-open.jpg" alt="Steel wheels with open center bores"><figcaption><strong>Cap already lost?</strong> Measure the wheel opening directly — the tool's measure mode starts there.</figcaption></figure>
+    </div>
+    <div class="promise">
+      <strong>Still can't pin it down? Cap Concierge.</strong> Send the vehicle, the part number if you have it, and photos — we source genuine OEM caps and quote one total before you pay anything.
+      <p style="margin:10px 0 0"><a class="btn" href="cap-concierge.html">We find your cap</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong style="color:#fff">oemcentercaps.com</strong><br>
+        OEM Center Caps — the factory wheel center cap fitment resource, run from Canada by <strong>JTT Imports</strong>.<br>
+        <a class="iglink" href="https://www.instagram.com/oemcentercaps/"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#e8a33d" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @oemcentercaps</a><br>
+        <a href="https://x.com/OEMCenterCaps">X @OEMCenterCaps</a><br>
+        <a href="https://www.youtube.com/@OEMCenterCaps">YouTube @OEMCenterCaps</a><br>
+        <a href="https://www.linkedin.com/in/trav-mane-719a3ba2" target="_blank" rel="noopener">LinkedIn</a><br>
+        Email: <a href="mailto:jtt.imports@hotmail.com">jtt.imports@hotmail.com</a><br>
+        WhatsApp: <a href="https://wa.me/14374277660">+1 437-427-7660</a>
+      </div>
+      <div>
+        <a href="cap-finder.html">Cap Finder</a><br>
+        <a href="cap-concierge.html">Cap Concierge</a><br>
+        <a href="fitment-guide.html">Fitment Guide</a><br>
+        <a href="how-to-measure.html">How to Measure</a>
+      </div>
+      <div>
+        <a href="brands.html">By Brand</a><br>
+        <a href="blog.html">Blog</a><br>
+        <a href="where-to-buy.html">Where to Buy</a><br>
+        <a href="about.html">About / Contact</a><br>
+        <a href="contact.html">Contact</a><br>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <p class="small" style="margin-top:16px">oemcentercaps.com is run by JTT Imports (Canada). All sizes on this site are published as commonly-listed fitments from the sources cited on each page. Always verify by measuring your own cap or wheel before ordering. Shopping links may earn us a commission at no cost to you. Vehicle brand names are trademarks of their respective owners; this site is not affiliated with any vehicle manufacturer.</p>
+    <div class="networkstrip">Our Network: <a href="https://urbanxklusives.com">UrbanXklusives</a> &middot; OEM Center Caps &middot; durag.store &middot; ketchups.ca &middot; Career Path Guidance &middot; Skill Sharing — independent sites, one owner.</div>
+  </div>
+</footer>
+
+<script>
+var APPS = [
+ {b:"Acura", l:"Most models (shared Honda 44732 family)", od:"69 mm OD", odN:[69,69], id:"64 mm clip ID", pn:"44732-SY8-A100 · 44732-S0K-A000 · 44732-S9A-A00", note:"Acura caps share Honda's 44732 part-number family — check the number molded on the back of your cap.", q:"Acura 69mm center caps 44732"},
+ {b:"Acura", l:"RDX (2010–2012) — first generation", od:"69 mm OD", odN:[69,69], id:"64 mm clip ID", pn:"44732 family — see note", note:"The RDX runs a 64.1 mm hub bore on a 5×114.3 pattern and takes the standard Acura/Honda 44732-family cap (family numbers include 44732-S9A-A00). No RDX-only cap part number is published in the sources we checked — the number molded on your cap's back is the final word.", q:"Acura RDX center cap 69mm"},
+ {b:"Acura", l:"RDX (2013–2017) — second generation", od:"69 mm OD", odN:[69,69], id:"64 mm clip ID", pn:"44732 family — see note", note:"The second-generation RDX kept the same 64.1 mm hub bore and 5×114.3 pattern — no cap change across the 2013 redesign in the sources we checked. Same 44732-family cap as the first generation; confirm with the molded number on your cap's back or by measuring.", q:"Acura RDX center cap 69mm"},
+ {b:"Alfa Romeo", l:"OE caps (most models)", od:"60 mm", odN:[60,60], id:"", pn:"", note:"60 mm is the OE cap size published for the brand; confirm by wheel before ordering.", q:"Alfa Romeo 60mm center cap"},
+ {b:"Audi", l:"Cars (most)", od:"60 mm", odN:[60,60], id:"", pn:"4B0601170", note:"Large-SUV caps (e.g. Q5) exist outside the 60 mm car family — measure SUVs.", q:"Audi 60mm center cap 4B0601170"},
+ {b:"BMW", l:"Most wheels — two OE families", od:"57 mm or 68 mm, by wheel", odN:[57,68], id:"68 mm family: 68 mm ID", pn:"", note:"BMW runs two OE cap sizes. Your wheel decides which — measure before ordering.", q:"BMW center cap 68mm"},
+ {b:"Cadillac", l:"Escalade / GM trucks (6-lug)", od:"83 mm OD", odN:[83,83], id:"", pn:"Shared GM truck family", note:"Same 83 mm family as Silverado/Sierra/Tahoe/Yukon.", q:"Cadillac Escalade 83mm center cap"},
+ {b:"Cadillac", l:"Cars — ATS/CTS/CT4/CT5/XT5/XT6 (2016–2024)", od:"2-5/8 in (≈67 mm)", odN:[66,68], id:"", pn:"23212548", note:"", q:"Cadillac center cap 23212548"},
+ {b:"Chevrolet", l:"Silverado 1500 / Tahoe / Suburban (2014–2024)", od:"83 mm (3.25 in) OD", odN:[83,83], id:"", pn:"22837060 · 20942002", note:"The shared GM truck cap family.", q:"Silverado 83mm center cap 22837060"},
+ {b:"Dodge", l:"Charger / Challenger (2017–2023)", od:"63 mm", odN:[63,63], id:"", pn:"6CZ27RXFAA (OEM-style)", note:"", q:"Dodge Charger Challenger 63mm center cap"},
+ {b:"Ford", l:"F-150 (2012–2014), 20 in alloy wheel", od:"3 in (76.2 mm)", odN:[76,77], id:"", pn:"CL3Z1130B", note:"Wheel-specific: other F-150 wheels take different caps.", q:"F-150 center cap CL3Z1130B"},
+ {b:"Ford", l:"F-150 / Expedition (1997–2004)", od:"180 mm lug-cover cap", odN:[180,180], id:"Covers the lug nuts", pn:"YL34-1A096", note:"A lug-cover cap, not a snap-in — held by the lugs/threaded nuts.", q:"F-150 lug cover cap YL34-1A096"},
+ {b:"GMC", l:"Sierra 1500 / Yukon (2014–2024)", od:"83 mm (3.25 in) OD", odN:[83,83], id:"", pn:"22837060 · 20942002", note:"The shared GM truck cap family (same caps as Chevrolet trucks).", q:"GMC Sierra 83mm center cap 22837060"},
+ {b:"Honda", l:"Accord / Civic / CR-V / Odyssey (many 2000s–2010s)", od:"69 mm (2.72 in) OD", odN:[69,69], id:"", pn:"44732-S9A-A00 family", note:"The 44732 family spans many Honda/Acura wheels — the molded part number on your cap's back is the final word.", q:"Honda 69mm center cap 44732-S9A-A00"},
+ {b:"Hyundai", l:"Elantra (2011 era)", od:"≈66 mm", odN:[65,67], id:"", pn:"52960-xxxxx pattern", note:"Elantra cap size changed by generation — 2011 ≈ 66 mm, 2017 ≈ 60 mm.", q:"Hyundai Elantra center cap 52960"},
+ {b:"Hyundai", l:"Elantra (2017 era)", od:"≈60 mm", odN:[59,61], id:"", pn:"52960-xxxxx pattern", note:"Elantra cap size changed by generation — 2011 ≈ 66 mm, 2017 ≈ 60 mm.", q:"Hyundai Elantra center cap 52960"},
+ {b:"Jaguar", l:"S-Type / X-Type / XF / XJ / XK", od:"59 mm OD", odN:[59,59], id:"50 mm clip ID", pn:"C2D9611 · C2C30081 · C2D12326 · C2Z4438", note:"", q:"Jaguar center cap C2D9611"},
+ {b:"Jeep", l:"Grand Cherokee / Wrangler / Compass (many 2005+)", od:"63–64 mm OD", odN:[63,64], id:"2.5 in ID", pn:"1LB77 series", note:"", q:"Jeep center cap 1LB77 63mm"},
+ {b:"Jeep", l:"Liberty / older Grand Cherokee", od:"55 mm OD versions exist", odN:[55,55], id:"", pn:"", note:"Don't assume the 63–64 mm family — older Jeeps run a smaller cap.", q:"Jeep Liberty 55mm center cap"},
+ {b:"Kia", l:"Most models", od:"By wheel — part-number led", odN:null, id:"", pn:"52960-xxxxx pattern (e.g. Sportage 52960-P1700, K900 52960-J6100)", note:"Kia caps follow the shared Hyundai/Kia 52960 pattern. Read the part number on your cap's back, then measure to confirm.", q:"Kia center cap 52960"},
+ {b:"Land Rover", l:"Range Rover / Land Rover (most)", od:"62 mm OD", odN:[62,62], id:"47.5 mm ID", pn:"RRJ000010 / RRJ500030 family", note:"63 mm variants also listed (LR001156, LR044717 interchanges) — a 1 mm apart case where the measure check matters.", q:"Range Rover center cap RRJ000010"},
+ {b:"Lexus", l:"Cars (2006–2013)", od:"62 mm OD", odN:[62,62], id:"", pn:"42603-30590", note:"", q:"Lexus center cap 42603-30590 62mm"},
+ {b:"Mazda", l:"3 / 5 / 6, CX-7, CX-9, MX-5, RX-8 (2009–2015)", od:"≈56 mm family", odN:[56,57], id:"57 mm clip ID (2.25 in)", pn:"BBM2-37-190", note:"", warn:"Aftermarket pages claim 64 mm caps for Mazda 3/6/CX-5 — that figure confuses cap size with the 67.1 mm hub bore. OEM part-number evidence (BBM2-37-190, 57 mm clip ID) is what we publish.", q:"Mazda center cap BBM2-37-190"},
+ {b:"Mercedes-Benz", l:"OE caps (most models)", od:"74 mm", odN:[74,74], id:"", pn:"", note:"74 mm is the published OE cap size for the brand; confirm by wheel.", q:"Mercedes-Benz 74mm center cap"},
+ {b:"Mini", l:"Most wheels (shared BMW families)", od:"57 mm or 68 mm, by wheel", odN:[57,68], id:"", pn:"", note:"Mini shares BMW's two OE cap families — measure to learn which yours takes.", q:"Mini center cap 57mm 68mm"},
+ {b:"Mitsubishi", l:"Most models", od:"60 mm commonly listed", odN:[60,60], id:"", pn:"", note:"Outlander is reported at 65–70 mm varying by year and wheel — measure Outlanders.", q:"Mitsubishi 60mm center cap"},
+ {b:"Nissan", l:"Rogue Sport / Quest", od:"54 mm OD", odN:[54,54], id:"2.125 in ID", pn:"40343-AU51A · 40343-2DR0A", note:"", q:"Nissan center cap 40343-AU51A 54mm"},
+ {b:"Nissan", l:"Trucks & SUVs — Frontier / Kicks / Leaf / Pathfinder / Rogue", od:"63 mm (2.5 in)", odN:[63,63], id:"", pn:"40342-6TA1A", note:"", q:"Nissan center cap 40342-6TA1A 63mm"},
+ {b:"Peugeot / Citroën", l:"OE caps (most models)", od:"60 mm", odN:[60,60], id:"", pn:"", note:"", q:"Peugeot Citroen 60mm center cap"},
+ {b:"Porsche", l:"911 / Macan / Cayenne", od:"76 mm OD", odN:[76,76], id:"3 in ID", pn:"", note:"", q:"Porsche 76mm center cap"},
+ {b:"Ram", l:"1500 with 17 in wheels", od:"≈2.75 in (≈70 mm) reported", odN:[69,71], id:"", pn:"", note:"Reported, and varies by wheel — treat as a lead, then measure.", q:"Ram 1500 center cap 17 inch wheel"},
+ {b:"Subaru", l:"Most models", od:"60 mm OD", odN:[60,60], id:"55 mm clip ID", pn:"28821SA030 · 28821VA000", note:"", q:"Subaru center cap 28821SA030 60mm"},
+ {b:"Tesla", l:"Model 3 / Y / S / X", od:"CONFLICT — measure first", odN:null, id:"", pn:"6005879-04-A cited in one guide", note:"", warn:"Published sources openly disagree on Tesla caps: one buying guide says most OEM Tesla caps are 2.00 in (50.8 mm) with a 57.15 mm variant; a Tesla owners' forum measurement post says ALL factory Tesla caps are 58 mm; marketplaces commonly sell 56 mm caps for Model 3/Y/S/X. We will not pick a winner — measure your cap (or the wheel opening) and match the measurement.", q:"Tesla Model 3 Y center cap"},
+ {b:"Toyota", l:"Camry (2012+) / Corolla (2014+)", od:"62 mm OD", odN:[62,62], id:"", pn:"", note:"", q:"Toyota Camry Corolla 62mm center cap"},
+ {b:"Toyota", l:"Corolla (2009–2013)", od:"57 mm OD", odN:[57,57], id:"", pn:"", note:"One generation earlier, a different cap — the Corolla is the classic same-name/different-size case.", q:"Toyota Corolla 57mm center cap 2009 2013"},
+ {b:"Volkswagen", l:"Jetta / Passat / Golf / CC / Tiguan", od:"65 mm OD", odN:[65,65], id:"2.5 in ID", pn:"3B7601171", note:"Across the VW range, ODs run 56–66.5 mm by model: Golf Mk7/Mk8 60 mm; ID.3/ID.4 66.5 mm OD / 63 mm ID.", q:"Volkswagen center cap 3B7601171 65mm"},
+ {b:"Volvo", l:"OE caps (most models)", od:"64 mm", odN:[64,64], id:"", pn:"", note:"", q:"Volvo 64mm center cap"}
+];
+var MEASURE_FIRST = {
+ "Buick":"Buick cap diameters were not sourced in our research — we won't print a number we can't back.",
+ "Chrysler":"Chrysler brand cap diameters were not sourced (the sourced family data point is Dodge Charger/Challenger at 63 mm).",
+ "Fiat":"The Fiat 500's bolt pattern (4×98) is sourced; its cap diameter is not.",
+ "Genesis":"Genesis cap diameters were not sourced in our research yet.",
+ "Infiniti":"Infiniti cap diameters were not sourced in our research yet.",
+ "Lincoln":"Modern Lincoln cap diameters were not sourced (the 1997–2004 180 mm lug-cover era is Ford-shared — see Ford)."
+};
+var RETENTION = {
+ snap:"Snap-in plastic clips — the most common style. Match the clip diameter first.",
+ ring:"Spring / wire ring — measure across the ring seat on the back of the cap.",
+ screw:"Screw-on — count and measure the screw pattern as well as the diameter.",
+ push:"Push-through with retaining ring — common on trucks; longest-lived style. Clip depth matters most here.",
+ lug:"Lug-cover / bolt-over — sized to the lug pattern, not the bore. Diameter alone won't identify it."
+};
+function ebayLink(q,label){return '<label class="verify"><input type="checkbox" class="vchk">Step 1 — I measured my cap (or my wheel opening) and it matches these numbers</label><a class="btn shopbtn gated" target="_blank" rel="noopener" href="https://www.ebay.com/sch/i.html?_nkw='+encodeURIComponent(q)+'">Step 2 — '+label+'</a>';}
+document.addEventListener('change',function(e){
+  if(e.target && e.target.className==='vchk'){
+    var box=e.target.closest('.result');
+    if(box){var links=box.querySelectorAll('.gated');for(var i=0;i<links.length;i++){links[i].classList.toggle('on',e.target.checked);}}
+  }
+});
+var brandSel=document.getElementById('brandSel'), appSel=document.getElementById('appSel'), vehResult=document.getElementById('vehResult');
+var brands=[]; APPS.forEach(function(a){if(brands.indexOf(a.b)<0)brands.push(a.b);});
+Object.keys(MEASURE_FIRST).forEach(function(b){if(brands.indexOf(b)<0)brands.push(b);});
+brands.sort();
+brands.forEach(function(b){var o=document.createElement('option');o.value=b;o.textContent=b;brandSel.appendChild(o);});
+brandSel.addEventListener('change',function(){
+  vehResult.className='result'; vehResult.innerHTML='';
+  appSel.innerHTML=''; 
+  if(!brandSel.value){appSel.disabled=true;appSel.innerHTML='<option value="">Choose a brand first</option>';return;}
+  if(MEASURE_FIRST[brandSel.value]){
+    appSel.disabled=true; appSel.innerHTML='<option>Measure-first brand</option>';
+    vehResult.className='result show';
+    vehResult.innerHTML='<div class="big">Measure first — no sourced spec</div><p>'+MEASURE_FIRST[brandSel.value]+'</p><p>Sixty seconds with a caliper settles it: outer diameter across the face, clip diameter across the clip tips. Then run your numbers through the calculator below.</p><a class="btn shopbtn" href="how-to-measure.html">How to measure</a>';
+    return;
+  }
+  appSel.disabled=false; appSel.innerHTML='<option value="">Choose model / years / wheel…</option>';
+  APPS.forEach(function(a,i){if(a.b===brandSel.value){var o=document.createElement('option');o.value=i;o.textContent=a.l;appSel.appendChild(o);}});
+});
+appSel.addEventListener('change',function(){
+  if(appSel.value===''){vehResult.className='result';vehResult.innerHTML='';return;}
+  var a=APPS[Number(appSel.value)];
+  var h='<div class="big">'+a.od+'</div>';
+  h+='<table><tr><th style="width:34%">Application</th><td>'+a.b+' — '+a.l+'</td></tr>';
+  if(a.id)h+='<tr><th>Clip / inner diameter</th><td>'+a.id+'</td></tr>';
+  if(a.pn)h+='<tr><th>OEM part numbers</th><td>'+a.pn+'</td></tr>';
+  h+='</table>';
+  if(a.note)h+='<p>'+a.note+'</p>';
+  if(a.warn)h+='<div class="warn" style="margin-top:10px"><strong>Published conflict:</strong> '+a.warn+'</div>';
+  h+=ebayLink(a.q,'Shop this fitment on eBay');
+  h+='<a class="btn shopbtn" href="how-to-measure.html">Verify by measuring</a>';
+  vehResult.className='result show'+(a.warn?' conflict':'');
+  vehResult.innerHTML=h;
+});
+var unit='mm';
+var uMm=document.getElementById('uMm'), uIn=document.getElementById('uIn');
+uMm.addEventListener('click',function(){unit='mm';uMm.className='on';uIn.className='';});
+uIn.addEventListener('click',function(){unit='in';uIn.className='on';uMm.className='';});
+function frac(v){var n=Math.round(v*16),w=Math.floor(n/16),r=n%16;if(r===0)return w+' in';var d=16,rr=r;while(rr%2===0){rr/=2;d/=2;}return (w?w+' ':'')+rr+'/'+d+' in';}
+document.getElementById('calcBtn').addEventListener('click',function(){
+  var od=parseFloat(document.getElementById('odIn').value), idv=parseFloat(document.getElementById('idIn').value), ret=document.getElementById('retSel').value;
+  var box=document.getElementById('calcResult');
+  if(!od||od<=0){box.className='result show';box.innerHTML='<div class="big">Enter your outer diameter first</div><p>Measure across the widest point of the cap face with a caliper.</p>';return;}
+  var odMm=unit==='in'?od*25.4:od, idMm=isNaN(idv)?null:(unit==='in'?idv*25.4:idv);
+  var h='<div class="big">'+odMm.toFixed(1)+' mm <span style="font-size:1rem;color:#fff">= '+(odMm/25.4).toFixed(2)+' in ('+frac(odMm/25.4)+')</span></div>';
+  if(idMm)h+='<p>Clip diameter: <strong>'+idMm.toFixed(1)+' mm</strong> ('+(idMm/25.4).toFixed(2)+' in) — this is the number that must match your wheel opening.</p>';
+  var matches=APPS.filter(function(a){return a.odN && odMm>=a.odN[0]-1.5 && odMm<=a.odN[1]+1.5;});
+  if(matches.length){
+    h+='<p><strong>Known fitments at this size:</strong></p><table>';
+    matches.forEach(function(a){h+='<tr><td style="width:40%"><strong>'+a.b+'</strong> — '+a.l+'</td><td>'+a.od+(a.pn?'<br><span style="color:#9aa7b4">'+a.pn+'</span>':'')+'</td></tr>';});
+    h+='</table>';
+  } else {
+    h+='<p>No sourced fitment in our database sits at this size. That happens with less common wheels — your measurement still rules: search marketplaces by your exact millimetre size plus your brand, and match the clip diameter before the face diameter.</p>';
+  }
+  if(ret&&RETENTION[ret])h+='<p>'+RETENTION[ret]+'</p>';
+  h+=ebayLink(Math.round(odMm)+'mm center caps','Shop '+Math.round(odMm)+' mm caps on eBay');
+  h+='<p class="fineprint">Matches are within ±1.5 mm of your entry for orientation — a cap still has to match your exact measurement (the 1 mm rule) and your clip diameter to stay on the wheel.</p>';
+  box.className='result show'; box.innerHTML=h;
+  renderFitSummary();
+});
+/* ---- Step 3: fitment summary + send to OEM ---- */
+function collectFitState(){
+  var st={vehicle:null,listed:null,odMm:null,idMm:null,ret:null,pn:null,notes:null};
+  if(brandSel.value && appSel.value!=='' && !appSel.disabled){
+    var a=APPS[Number(appSel.value)];
+    st.vehicle=a.b+' — '+a.l;
+    st.listed=a.od+(a.pn?' — OEM '+a.pn:'');
+  } else if(brandSel.value){
+    st.vehicle=brandSel.value+' (model not picked yet)';
+  }
+  var od=parseFloat(document.getElementById('odIn').value);
+  var idv=parseFloat(document.getElementById('idIn').value);
+  if(od&&od>0)st.odMm=unit==='in'?od*25.4:od;
+  if(idv&&idv>0)st.idMm=unit==='in'?idv*25.4:idv;
+  var rs=document.getElementById('retSel');
+  if(rs.value)st.ret=rs.options[rs.selectedIndex].text;
+  var pn=document.getElementById('pnIn').value.trim();
+  if(pn)st.pn=pn;
+  var nt=document.getElementById('notesIn').value.trim();
+  if(nt)st.notes=nt;
+  return st;
+}
+function fitSummaryText(st){
+  var lines=['Center cap fitment check — OEM Center Caps',''];
+  if(st.vehicle)lines.push('Vehicle: '+st.vehicle);
+  if(st.listed)lines.push('Listed size / OEM part numbers: '+st.listed);
+  if(st.odMm)lines.push('My outer diameter: '+st.odMm.toFixed(1)+' mm');
+  if(st.idMm)lines.push('My clip diameter: '+st.idMm.toFixed(1)+' mm');
+  if(st.ret)lines.push('Retention style: '+st.ret);
+  if(st.pn)lines.push('Part number on my cap: '+st.pn);
+  if(st.notes)lines.push('Anything else: '+st.notes);
+  if(lines.length>2)lines.push('');
+  lines.push('Please confirm the fit before I buy. Thanks!');
+  return lines.join('\n');
+}
+function fitMailto(st){
+  var subj='Center cap fitment check';
+  if(st.vehicle)subj+=' — '+st.vehicle;
+  else if(st.odMm)subj+=' — '+st.odMm.toFixed(0)+' mm cap';
+  return 'mailto:jtt.imports@hotmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(fitSummaryText(st));
+}
+function setCell(id,val,placeholder){
+  var el=document.getElementById(id);
+  if(val){el.textContent=val;el.className='';}
+  else{el.textContent=placeholder;el.className='empty';}
+}
+function renderFitSummary(){
+  var st=collectFitState();
+  setCell('sumVehicle',st.vehicle,'Pick a vehicle in Step 1, or tell us in the notes below');
+  setCell('sumListed',st.listed,'—');
+  setCell('sumOd',st.odMm?st.odMm.toFixed(1)+' mm ('+(st.odMm/25.4).toFixed(2)+' in)':null,'Measure it in Step 2');
+  setCell('sumId',st.idMm?st.idMm.toFixed(1)+' mm ('+(st.idMm/25.4).toFixed(2)+' in)':null,'Measure it in Step 2');
+  setCell('sumRet',st.ret,'Pick one in Step 2');
+  setCell('sumPn',st.pn,'—');
+  setCell('sumNotes',st.notes,'—');
+  document.getElementById('sendFitBtn').href=fitMailto(st);
+}
+['odIn','idIn','pnIn','notesIn'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',renderFitSummary);
+});
+document.getElementById('retSel').addEventListener('change',renderFitSummary);
+brandSel.addEventListener('change',renderFitSummary);
+appSel.addEventListener('change',renderFitSummary);
+uMm.addEventListener('click',renderFitSummary);
+uIn.addEventListener('click',renderFitSummary);
+document.getElementById('copyFitBtn').addEventListener('click',function(){
+  var text=fitSummaryText(collectFitState());
+  var done=function(){document.getElementById('copyNote').style.display='block';};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){fallbackCopy(text);done();});
+  } else { fallbackCopy(text); done(); }
+});
+function fallbackCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+renderFitSummary();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(function(){});
+}
+var deferredPrompt = null;
+var installBtn = document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault(); deferredPrompt = e;
+  if (installBtn) installBtn.style.display = 'inline-block';
+});
+if (installBtn) installBtn.addEventListener('click', function(){
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(function(){ deferredPrompt = null; installBtn.style.display = 'none'; });
+});
+if (/iphone|ipad|ipod/i.test(navigator.userAgent) && !window.navigator.standalone) {
+  var hint = document.getElementById('iosHint');
+  if (hint) hint.style.display = 'inline';
+}
+</script>
+<a class="wafloat" href="https://wa.me/14374277660" aria-label="Chat with oemcentercaps.com on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0b3d20" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="watext">WhatsApp us</span></a>
+<script src="lightbox.js" defer></script>
+<script src="theme.js"></script>
+<!-- SCROLL BUTTONS (UXK pattern, OEM colors) -->
+<style>
+.scroll-btn{position:fixed;right:18px;z-index:200;width:52px;height:52px;border-radius:50%;background:#141414;border:2px solid #e8a33d;color:#e8a33d;font-size:22px;cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+.scroll-btn.show{opacity:1;pointer-events:auto}
+.scroll-btn:hover{background:#800020;color:#e8a33d;transform:scale(1.08)}
+#toBottom{bottom:24px}#toTop{bottom:92px}
+@media(max-width:720px){.scroll-btn{width:46px;height:46px;right:12px;font-size:20px}}
+</style>
+<button id="toBottom" class="scroll-btn" aria-label="Jump to bottom of page" title="Go to bottom">&#8595;</button>
+<button id="toTop" class="scroll-btn" aria-label="Back to top of page" title="Back to top">&#8593;</button>
+<script>
+(function(){var t=document.getElementById('toTop'),b=document.getElementById('toBottom');
+function s(){var y=window.scrollY||window.pageYOffset;var on=y>300;t.classList.toggle('show',on);b.classList.toggle('show',on);}
+window.addEventListener('scroll',s,{passive:true});s();
+t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+b.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'});});})();
+</script>
+</body>
+</html>
